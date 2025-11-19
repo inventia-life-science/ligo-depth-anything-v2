@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ligo-depth-anything-v2"
+version = "0.1.0"
+description = "Depth Anything V2 fork for ligo-ml"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gradio_imageslider",
+    "gradio",
+    "matplotlib",
+    "opencv-python",
+    "torch",
+    "torchvision",
+]
+
+[project.optional-dependencies]
+# Extra dependencies for the metric_depth submodule.
+metric-depth = [
+    "matplotlib",
+    "opencv-python",
+    "open3d",
+    "torch",
+    "torchvision",
+]
+
+[tool.setuptools]
+packages = [
+  "depth_anything_v2",
+  "metric_depth",
+]
